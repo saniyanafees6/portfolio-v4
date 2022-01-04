@@ -45,13 +45,18 @@ export default function Navbar() {
         </div>
         <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
           {navigation.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-240}
+              duration={500}
               className="text-base font-medium text-white hover:text-gray-50"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
